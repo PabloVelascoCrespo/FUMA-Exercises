@@ -30,17 +30,22 @@ struct Exercise1 {
 
 	void GenerateArrows(vec3 eje1, vec3 eje2, vec3 eje3)
 	{
-		vec3 perpendicular_vector1 = ((cross(eje3, eje1) * 0.1) + eje1) * cos(45 * ONE_DEG_IN_RAD);
-		vec3 perpendicular_vector2 = ((cross(eje1, eje3) * 0.1) + eje1) * cos(45 * ONE_DEG_IN_RAD);
-		vec3 perpendicular_vector3 = ((cross(eje1, eje2) * 0.1) + eje1) * cos(45 * ONE_DEG_IN_RAD);
-		vec3 perpendicular_vector4 = ((cross(eje2, eje1) * 0.1) + eje1) * cos(45 * ONE_DEG_IN_RAD);
+		vec3 perpendicular_vector1 = (((cross(eje1, eje3) + eje1) * cos(45 * ONE_DEG_IN_RAD)) - eje1);
+		vec3 starting_point1 = (perpendicular_vector1 * (0.1 / length(perpendicular_vector1))) + eje1;
 
-		float a = length(perpendicular_vector1 - eje1);
+		vec3 perpendicular_vector2 = (((cross(eje3, eje1) + eje1) * cos(45 * ONE_DEG_IN_RAD)) - eje1);
+		vec3 starting_point2 = (perpendicular_vector2 * (0.1 / length(perpendicular_vector2))) + eje1;
 
-		Shapes::addArrow(referenceFrameLines, perpendicular_vector1, eje1, eje1);
-		Shapes::addArrow(referenceFrameLines, perpendicular_vector2, eje1, eje1);
-		Shapes::addArrow(referenceFrameLines, perpendicular_vector3, eje1, eje1);
-		Shapes::addArrow(referenceFrameLines, perpendicular_vector4, eje1, eje1);
+		vec3 perpendicular_vector3 = (((cross(eje1, eje2) + eje1) * cos(45 * ONE_DEG_IN_RAD)) - eje1);
+		vec3 starting_point3 = (perpendicular_vector3 * (0.1 / length(perpendicular_vector3))) + eje1;
+
+		vec3 perpendicular_vector4 = (((cross(eje2, eje1) + eje1) * cos(45 * ONE_DEG_IN_RAD)) - eje1);
+		vec3 starting_point4 = (perpendicular_vector4 * (0.1 / length(perpendicular_vector4))) + eje1;
+
+		Shapes::addArrow(referenceFrameLines, starting_point1, eje1, eje1);
+		Shapes::addArrow(referenceFrameLines, starting_point2, eje1, eje1);
+		Shapes::addArrow(referenceFrameLines, starting_point3, eje1, eje1);
+		Shapes::addArrow(referenceFrameLines, starting_point4, eje1, eje1);
 	}
 
 	void init(int width, int height) {
