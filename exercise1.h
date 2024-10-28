@@ -13,6 +13,7 @@ struct Exercise1 {
 	GLFWwindow *window = NULL;
 
 	vec3  ambientColor = vec3(0.7f, 0.7f, 0.75f);
+
 	GLuint lines_shader_index;
 
 	Camera camera;
@@ -22,9 +23,25 @@ struct Exercise1 {
 	Lines cubeLines;
 	mat4 cubeMatrix;
 	vec3 cubePosition;
+	vec3 cubeRotation;
 
 	Lines referenceFrameLines;
 	mat4 referenceFrameMatrix;
+
+	void GenerateArrows(vec3 eje1, vec3 eje2, vec3 eje3)
+	{
+		vec3 perpendicular_vector1 = ((cross(eje3, eje1) * 0.1) + eje1) * cos(45 * ONE_DEG_IN_RAD);
+		vec3 perpendicular_vector2 = ((cross(eje1, eje3) * 0.1) + eje1) * cos(45 * ONE_DEG_IN_RAD);
+		vec3 perpendicular_vector3 = ((cross(eje1, eje2) * 0.1) + eje1) * cos(45 * ONE_DEG_IN_RAD);
+		vec3 perpendicular_vector4 = ((cross(eje2, eje1) * 0.1) + eje1) * cos(45 * ONE_DEG_IN_RAD);
+
+		float a = length(perpendicular_vector1 - eje1);
+
+		Shapes::addArrow(referenceFrameLines, perpendicular_vector1, eje1, eje1);
+		Shapes::addArrow(referenceFrameLines, perpendicular_vector2, eje1, eje1);
+		Shapes::addArrow(referenceFrameLines, perpendicular_vector3, eje1, eje1);
+		Shapes::addArrow(referenceFrameLines, perpendicular_vector4, eje1, eje1);
+	}
 
 	void init(int width, int height) {
 
@@ -46,7 +63,7 @@ struct Exercise1 {
 			{1,1,-1},
 			{-1,1,-1},
 		};
-		
+
 		vec3 cubeVertexColors []= {
 			whiteColor,
 			whiteColor,
@@ -56,8 +73,9 @@ struct Exercise1 {
 			whiteColor,
 			whiteColor,
 			whiteColor,
+			whiteColor,
 		};
-		
+
 		GLuint cubeLineIndices []= {
 			0,1,
 			1,2,
@@ -72,17 +90,25 @@ struct Exercise1 {
 			1,5,
 			2,6,
 			3,7,
-
 		};
 
 		cubeLines.add(&cubeVertexPositions[0].v[0], &cubeVertexColors[0].v[0], 8, &cubeLineIndices[0], 12 * 2);
 		cubeLines.load_to_gpu();
 		cubeMatrix = identity_mat4();
 		cubePosition = vec3(0, 0, 0);
+		cubeRotation = vec3(0, 0, 0);
 
+		// eje X
 		Shapes::addArrow(referenceFrameLines, vec3(0, 0, 0), vec3(1, 0, 0), vec3(1, 0, 0));
+		GenerateArrows(vec3(1,0,0), vec3(0,1,0), vec3(0,0,1));
+
+		// eje Y
 		Shapes::addArrow(referenceFrameLines, vec3(0, 0, 0), vec3(0, 1, 0), vec3(0, 1, 0));
+		GenerateArrows(vec3(0, 1, 0), vec3(1, 0, 0), vec3(0, 0, 1));
+	
+		// eje Z
 		Shapes::addArrow(referenceFrameLines, vec3(0, 0, 0), vec3(0, 0, 1), vec3(0, 0, 1));
+		GenerateArrows(vec3(0, 0, 1), vec3(1, 0, 0), vec3(0, 1, 0));
 
 		referenceFrameLines.load_to_gpu();
 		referenceFrameLines.get_shader_locations(lines_shader_index);
@@ -129,11 +155,50 @@ struct Exercise1 {
 			glfwSetWindowShouldClose(window, 1);
 		}
 
-		// TODO: change following line to translate and rotate camera 
 		cameraMatrix = translate(identity_mat4(), cameraPosition * -1.f);
 
-		// TODO: change following line to translate and rotate cube
-		cubeMatrix = translate(identity_mat4(), cubePosition);
+		if (glfwGetKey(window, GLFW_KEY_DOWN)) {
+			cameraPosition.y -= 3 * elapsed_seconds;
+		}
+		if (glfwGetKey(window, GLFW_KEY_UP)) {
+			cameraPosition.y += 3 * elapsed_seconds;
+		}
+		if (glfwGetKey(window, GLFW_KEY_LEFT)) {
+			cameraPosition.x -= 3 * elapsed_seconds;
+		}
+		if (glfwGetKey(window, GLFW_KEY_RIGHT)) {
+			cameraPosition.x += 3 * elapsed_seconds;
+		}
+
+		if (glfwGetKey(window, GLFW_KEY_D))
+		{
+			cubePosition.x += 3 * elapsed_seconds;
+			cubeRotation.y += 90 * elapsed_seconds;
+		}
+
+		if (glfwGetKey(window, GLFW_KEY_A))
+		{
+			cubePosition.x -= 3 * elapsed_seconds;
+			cubeRotation.y -= 90 * elapsed_seconds;
+		}
+
+		if (glfwGetKey(window, GLFW_KEY_W))
+		{
+			cubePosition.y += 3 * elapsed_seconds;
+			cubeRotation.x -= 90 * elapsed_seconds;
+		}
+
+		if (glfwGetKey(window, GLFW_KEY_S))
+		{
+			cubePosition.y -= 3 * elapsed_seconds;
+			cubeRotation.x += 90 * elapsed_seconds;
+		}
+
+
+		cubeMatrix = identity_mat4();
+		cubeMatrix = rotate_x_deg(cubeMatrix, cubeRotation.x);
+		cubeMatrix = rotate_y_deg(cubeMatrix, cubeRotation.y);
+		cubeMatrix = translate(cubeMatrix, cubePosition);
 
 		glUseProgram(lines_shader_index);
 

@@ -1,1 +1,20 @@
-﻿  Exercise1.vcxproj -> C:\Users\jose.benito\Downloads\exercise1handout\Debug\Exercise1.exe
+﻿  exercise1.cpp
+D:\MÁSTER\FundamentosMatematicos\Practica1\exercise1handout\Exercise1.h(33,54): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+D:\MÁSTER\FundamentosMatematicos\Practica1\exercise1handout\Exercise1.h(33,72): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+D:\MÁSTER\FundamentosMatematicos\Practica1\exercise1handout\Exercise1.h(34,54): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+D:\MÁSTER\FundamentosMatematicos\Practica1\exercise1handout\Exercise1.h(34,72): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+D:\MÁSTER\FundamentosMatematicos\Practica1\exercise1handout\Exercise1.h(35,54): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+D:\MÁSTER\FundamentosMatematicos\Practica1\exercise1handout\Exercise1.h(35,72): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+D:\MÁSTER\FundamentosMatematicos\Practica1\exercise1handout\Exercise1.h(36,54): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+D:\MÁSTER\FundamentosMatematicos\Practica1\exercise1handout\Exercise1.h(36,72): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+  main.cpp
+D:\MÁSTER\FundamentosMatematicos\Practica1\exercise1handout\exercise1.h(33,54): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+D:\MÁSTER\FundamentosMatematicos\Practica1\exercise1handout\exercise1.h(33,72): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+D:\MÁSTER\FundamentosMatematicos\Practica1\exercise1handout\exercise1.h(34,54): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+D:\MÁSTER\FundamentosMatematicos\Practica1\exercise1handout\exercise1.h(34,72): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+D:\MÁSTER\FundamentosMatematicos\Practica1\exercise1handout\exercise1.h(35,54): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+D:\MÁSTER\FundamentosMatematicos\Practica1\exercise1handout\exercise1.h(35,72): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+D:\MÁSTER\FundamentosMatematicos\Practica1\exercise1handout\exercise1.h(36,54): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+D:\MÁSTER\FundamentosMatematicos\Practica1\exercise1handout\exercise1.h(36,72): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+  Generando código...
+  Exercise1.vcxproj -> D:\MÁSTER\FundamentosMatematicos\Practica1\exercise1handout\Debug\Exercise1.exe
