@@ -1,0 +1,146 @@
+﻿  camera.cpp
+  exercise2.cpp
+  gl_utils.cpp
+F:\Máster\Fundamentos Matemáticos\Practicas\exercise2handout\gl_utils.cpp(153,25): warning C4267: '+=': conversión de 'size_t' a 'int'; posible pérdida de datos
+  lineshapes.cpp
+F:\Máster\Fundamentos Matemáticos\Practicas\exercise2handout\lineshapes.cpp(23,57): warning C4267: '=': conversión de 'size_t' a '_Ty'; posible pérdida de datos
+          with
+          [
+              _Ty=unsigned int
+          ]
+F:\Máster\Fundamentos Matemáticos\Practicas\exercise2handout\lineshapes.cpp(48,37): warning C4267: 'argumento': conversión de 'size_t' a 'GLuint'; posible pérdida de datos
+F:\Máster\Fundamentos Matemáticos\Practicas\exercise2handout\lineshapes.cpp(49,65): warning C4267: 'argumento': conversión de 'size_t' a 'GLuint'; posible pérdida de datos
+F:\Máster\Fundamentos Matemáticos\Practicas\exercise2handout\lineshapes.cpp(57,37): warning C4267: 'argumento': conversión de 'size_t' a 'GLuint'; posible pérdida de datos
+F:\Máster\Fundamentos Matemáticos\Practicas\exercise2handout\lineshapes.cpp(58,65): warning C4267: 'argumento': conversión de 'size_t' a 'GLuint'; posible pérdida de datos
+F:\Máster\Fundamentos Matemáticos\Practicas\exercise2handout\lineshapes.cpp(85,58): warning C4267: 'argumento': conversión de 'size_t' a 'GLsizei'; posible pérdida de datos
+  main.cpp
+  maths_funcs.cpp
+  mesh.cpp
+F:\Máster\Fundamentos Matemáticos\Practicas\exercise2handout\mesh.cpp(388,37): warning C4267: 'argumento': conversión de 'size_t' a 'GLuint'; posible pérdida de datos
+F:\Máster\Fundamentos Matemáticos\Practicas\exercise2handout\mesh.cpp(389,65): warning C4267: 'argumento': conversión de 'size_t' a 'GLuint'; posible pérdida de datos
+F:\Máster\Fundamentos Matemáticos\Practicas\exercise2handout\mesh.cpp(398,37): warning C4267: 'argumento': conversión de 'size_t' a 'GLuint'; posible pérdida de datos
+F:\Máster\Fundamentos Matemáticos\Practicas\exercise2handout\mesh.cpp(399,65): warning C4267: 'argumento': conversión de 'size_t' a 'GLuint'; posible pérdida de datos
+F:\Máster\Fundamentos Matemáticos\Practicas\exercise2handout\mesh.cpp(411,38): warning C4267: 'argumento': conversión de 'size_t' a 'GLuint'; posible pérdida de datos
+F:\Máster\Fundamentos Matemáticos\Practicas\exercise2handout\mesh.cpp(412,66): warning C4267: 'argumento': conversión de 'size_t' a 'GLuint'; posible pérdida de datos
+F:\Máster\Fundamentos Matemáticos\Practicas\exercise2handout\mesh.cpp(421,37): warning C4267: 'argumento': conversión de 'size_t' a 'GLuint'; posible pérdida de datos
+F:\Máster\Fundamentos Matemáticos\Practicas\exercise2handout\mesh.cpp(422,65): warning C4267: 'argumento': conversión de 'size_t' a 'GLuint'; posible pérdida de datos
+F:\Máster\Fundamentos Matemáticos\Practicas\common\include\assimp\quaternion.inl(207,15): warning C4244: '=': conversión de 'double' a 'TReal'; posible pérdida de datos
+          with
+          [
+              TReal=float
+          ]
+F:\Máster\Fundamentos Matemáticos\Practicas\common\include\assimp\quaternion.inl(186,1): message : al compilar la función del miembro clase plantilla "void aiQuaterniont<float>::Interpolate(aiQuaterniont<float> &,const aiQuaterniont<float> &,const aiQuaterniont<float> &,TReal)"
+          with
+          [
+              TReal=float
+          ]
+F:\Máster\Fundamentos Matemáticos\Practicas\common\include\assimp\anim.h(435,28): message : Vea la referencia a la creación de una instancia de la función plantilla "void aiQuaterniont<float>::Interpolate(aiQuaterniont<float> &,const aiQuaterniont<float> &,const aiQuaterniont<float> &,TReal)" que se está compilando
+          with
+          [
+              TReal=float
+          ]
+F:\Máster\Fundamentos Matemáticos\Practicas\common\include\assimp\anim.h(107,24): message : Vea la referencia a la creación de una instancia de clase plantilla "aiQuaterniont<float>" que se está compilando
+F:\Máster\Fundamentos Matemáticos\Practicas\common\include\assimp\quaternion.inl(208,14): warning C4244: '=': conversión de 'double' a 'TReal'; posible pérdida de datos
+          with
+          [
+              TReal=float
+          ]
+F:\Máster\Fundamentos Matemáticos\Practicas\common\include\assimp\quaternion.inl(209,61): warning C4244: '=': conversión de 'double' a 'TReal'; posible pérdida de datos
+          with
+          [
+              TReal=float
+          ]
+F:\Máster\Fundamentos Matemáticos\Practicas\common\include\assimp\quaternion.inl(210,33): warning C4244: '=': conversión de 'double' a 'TReal'; posible pérdida de datos
+          with
+          [
+              TReal=float
+          ]
+F:\Máster\Fundamentos Matemáticos\Practicas\common\include\assimp\vector3.inl(93,13): warning C4244: 'return': conversión de 'double' a 'TReal'; posible pérdida de datos
+          with
+          [
+              TReal=float
+          ]
+F:\Máster\Fundamentos Matemáticos\Practicas\common\include\assimp\vector3.inl(92,57): message : al compilar la función del miembro clase plantilla "TReal aiVector3t<TReal>::Length(void) const"
+          with
+          [
+              TReal=float
+          ]
+F:\Máster\Fundamentos Matemáticos\Practicas\common\include\assimp\vector3.inl(98,8): message : Vea la referencia a la creación de una instancia de la función plantilla "TReal aiVector3t<TReal>::Length(void) const" que se está compilando
+          with
+          [
+              TReal=float
+          ]
+F:\Máster\Fundamentos Matemáticos\Practicas\common\include\assimp\vector3.inl(142,91): message : al compilar la función del miembro clase plantilla "bool aiVector3t<float>::operator ==(const aiVector3t<float> &) const"
+F:\Máster\Fundamentos Matemáticos\Practicas\common\include\assimp\anim.h(82,3): message : Vea la referencia a la creación de una instancia de la función plantilla "bool aiVector3t<float>::operator ==(const aiVector3t<float> &) const" que se está compilando
+F:\Máster\Fundamentos Matemáticos\Practicas\common\include\assimp\types.h(150,22): message : Vea la referencia a la creación de una instancia de clase plantilla "aiVector3t<float>" que se está compilando
+  node.cpp
+  Generando código...
+camera.obj : error LNK2019: símbolo externo __imp___glewGetUniformLocation sin resolver al que se hace referencia en la función "public: void __cdecl Camera::get_shader_uniforms(unsigned int)" (?get_shader_uniforms@Camera@@QEAAXI@Z)
+lineshapes.obj : error LNK2001: símbolo externo __imp___glewGetUniformLocation sin resolver
+mesh.obj : error LNK2001: símbolo externo __imp___glewGetUniformLocation sin resolver
+camera.obj : error LNK2019: símbolo externo __imp___glewUniformMatrix4fv sin resolver al que se hace referencia en la función "public: void __cdecl Camera::set_shader_uniforms(unsigned int,struct mat4 const &)" (?set_shader_uniforms@Camera@@QEAAXIAEBUmat4@@@Z)
+lineshapes.obj : error LNK2001: símbolo externo __imp___glewUniformMatrix4fv sin resolver
+mesh.obj : error LNK2001: símbolo externo __imp___glewUniformMatrix4fv sin resolver
+gl_utils.obj : error LNK2019: símbolo externo __imp_glewInit sin resolver al que se hace referencia en la función "bool __cdecl startGlContext(struct GLFWwindow * *,int,int)" (?startGlContext@@YA_NPEAPEAUGLFWwindow@@HH@Z)
+gl_utils.obj : error LNK2019: símbolo externo glfwInit sin resolver al que se hace referencia en la función "bool __cdecl startGlContext(struct GLFWwindow * *,int,int)" (?startGlContext@@YA_NPEAPEAUGLFWwindow@@HH@Z)
+gl_utils.obj : error LNK2019: símbolo externo glfwTerminate sin resolver al que se hace referencia en la función "bool __cdecl startGlContext(struct GLFWwindow * *,int,int)" (?startGlContext@@YA_NPEAPEAUGLFWwindow@@HH@Z)
+main.obj : error LNK2001: símbolo externo glfwTerminate sin resolver
+gl_utils.obj : error LNK2019: símbolo externo glfwGetVersionString sin resolver al que se hace referencia en la función "bool __cdecl startGlContext(struct GLFWwindow * *,int,int)" (?startGlContext@@YA_NPEAPEAUGLFWwindow@@HH@Z)
+gl_utils.obj : error LNK2019: símbolo externo glfwSetErrorCallback sin resolver al que se hace referencia en la función "bool __cdecl startGlContext(struct GLFWwindow * *,int,int)" (?startGlContext@@YA_NPEAPEAUGLFWwindow@@HH@Z)
+gl_utils.obj : error LNK2019: símbolo externo glfwWindowHint sin resolver al que se hace referencia en la función "bool __cdecl startGlContext(struct GLFWwindow * *,int,int)" (?startGlContext@@YA_NPEAPEAUGLFWwindow@@HH@Z)
+gl_utils.obj : error LNK2019: símbolo externo glfwCreateWindow sin resolver al que se hace referencia en la función "bool __cdecl startGlContext(struct GLFWwindow * *,int,int)" (?startGlContext@@YA_NPEAPEAUGLFWwindow@@HH@Z)
+gl_utils.obj : error LNK2019: símbolo externo glfwSetWindowTitle sin resolver al que se hace referencia en la función "void __cdecl _update_fps_counter(struct GLFWwindow *)" (?_update_fps_counter@@YAXPEAUGLFWwindow@@@Z)
+gl_utils.obj : error LNK2019: símbolo externo glfwSetFramebufferSizeCallback sin resolver al que se hace referencia en la función "bool __cdecl startGlContext(struct GLFWwindow * *,int,int)" (?startGlContext@@YA_NPEAPEAUGLFWwindow@@HH@Z)
+gl_utils.obj : error LNK2019: símbolo externo glfwGetTime sin resolver al que se hace referencia en la función "void __cdecl _update_fps_counter(struct GLFWwindow *)" (?_update_fps_counter@@YAXPEAUGLFWwindow@@@Z)
+main.obj : error LNK2001: símbolo externo glfwGetTime sin resolver
+gl_utils.obj : error LNK2019: símbolo externo glfwMakeContextCurrent sin resolver al que se hace referencia en la función "bool __cdecl startGlContext(struct GLFWwindow * *,int,int)" (?startGlContext@@YA_NPEAPEAUGLFWwindow@@HH@Z)
+gl_utils.obj : error LNK2019: símbolo externo __imp___glewAttachShader sin resolver al que se hace referencia en la función "bool __cdecl create_programme(unsigned int,unsigned int,unsigned int *)" (?create_programme@@YA_NIIPEAI@Z)
+gl_utils.obj : error LNK2019: símbolo externo __imp___glewCompileShader sin resolver al que se hace referencia en la función "bool __cdecl create_shader(char const *,unsigned int *,unsigned int)" (?create_shader@@YA_NPEBDPEAII@Z)
+gl_utils.obj : error LNK2019: símbolo externo __imp___glewCreateProgram sin resolver al que se hace referencia en la función "bool __cdecl create_programme(unsigned int,unsigned int,unsigned int *)" (?create_programme@@YA_NIIPEAI@Z)
+gl_utils.obj : error LNK2019: símbolo externo __imp___glewCreateShader sin resolver al que se hace referencia en la función "bool __cdecl create_shader(char const *,unsigned int *,unsigned int)" (?create_shader@@YA_NPEBDPEAII@Z)
+gl_utils.obj : error LNK2019: símbolo externo __imp___glewDeleteShader sin resolver al que se hace referencia en la función "bool __cdecl create_programme(unsigned int,unsigned int,unsigned int *)" (?create_programme@@YA_NIIPEAI@Z)
+gl_utils.obj : error LNK2019: símbolo externo __imp___glewGetProgramInfoLog sin resolver al que se hace referencia en la función "void __cdecl print_programme_info_log(unsigned int)" (?print_programme_info_log@@YAXI@Z)
+gl_utils.obj : error LNK2019: símbolo externo __imp___glewGetProgramiv sin resolver al que se hace referencia en la función "bool __cdecl create_programme(unsigned int,unsigned int,unsigned int *)" (?create_programme@@YA_NIIPEAI@Z)
+gl_utils.obj : error LNK2019: símbolo externo __imp___glewGetShaderInfoLog sin resolver al que se hace referencia en la función "void __cdecl print_shader_info_log(unsigned int)" (?print_shader_info_log@@YAXI@Z)
+gl_utils.obj : error LNK2019: símbolo externo __imp___glewGetShaderiv sin resolver al que se hace referencia en la función "bool __cdecl create_shader(char const *,unsigned int *,unsigned int)" (?create_shader@@YA_NPEBDPEAII@Z)
+gl_utils.obj : error LNK2019: símbolo externo __imp___glewLinkProgram sin resolver al que se hace referencia en la función "bool __cdecl create_programme(unsigned int,unsigned int,unsigned int *)" (?create_programme@@YA_NIIPEAI@Z)
+gl_utils.obj : error LNK2019: símbolo externo __imp___glewShaderSource sin resolver al que se hace referencia en la función "bool __cdecl create_shader(char const *,unsigned int *,unsigned int)" (?create_shader@@YA_NPEBDPEAII@Z)
+gl_utils.obj : error LNK2019: símbolo externo __imp___glewValidateProgram sin resolver al que se hace referencia en la función "bool __cdecl is_programme_valid(unsigned int)" (?is_programme_valid@@YA_NI@Z)
+gl_utils.obj : error LNK2019: símbolo externo __imp___glewGenerateMipmap sin resolver al que se hace referencia en la función "void __cdecl load_texture_to_gpu(unsigned char *,unsigned int *,int,int,int)" (?load_texture_to_gpu@@YAXPEAEPEAIHHH@Z)
+gl_utils.obj : error LNK2019: símbolo externo __imp_glewExperimental sin resolver al que se hace referencia en la función "bool __cdecl startGlContext(struct GLFWwindow * *,int,int)" (?startGlContext@@YA_NPEAPEAUGLFWwindow@@HH@Z)
+lineshapes.obj : error LNK2019: símbolo externo __imp___glewBindBuffer sin resolver al que se hace referencia en la función "public: void __cdecl Lines::load_to_gpu(void)" (?load_to_gpu@Lines@@QEAAXXZ)
+mesh.obj : error LNK2001: símbolo externo __imp___glewBindBuffer sin resolver
+lineshapes.obj : error LNK2019: símbolo externo __imp___glewBufferData sin resolver al que se hace referencia en la función "public: void __cdecl Lines::load_to_gpu(void)" (?load_to_gpu@Lines@@QEAAXXZ)
+mesh.obj : error LNK2001: símbolo externo __imp___glewBufferData sin resolver
+lineshapes.obj : error LNK2019: símbolo externo __imp___glewGenBuffers sin resolver al que se hace referencia en la función "public: void __cdecl Lines::load_to_gpu(void)" (?load_to_gpu@Lines@@QEAAXXZ)
+mesh.obj : error LNK2001: símbolo externo __imp___glewGenBuffers sin resolver
+lineshapes.obj : error LNK2019: símbolo externo __imp___glewEnableVertexAttribArray sin resolver al que se hace referencia en la función "public: void __cdecl Lines::load_to_gpu(void)" (?load_to_gpu@Lines@@QEAAXXZ)
+mesh.obj : error LNK2001: símbolo externo __imp___glewEnableVertexAttribArray sin resolver
+lineshapes.obj : error LNK2019: símbolo externo __imp___glewVertexAttribPointer sin resolver al que se hace referencia en la función "public: void __cdecl Lines::load_to_gpu(void)" (?load_to_gpu@Lines@@QEAAXXZ)
+mesh.obj : error LNK2001: símbolo externo __imp___glewVertexAttribPointer sin resolver
+lineshapes.obj : error LNK2019: símbolo externo __imp___glewBindVertexArray sin resolver al que se hace referencia en la función "public: void __cdecl Lines::load_to_gpu(void)" (?load_to_gpu@Lines@@QEAAXXZ)
+mesh.obj : error LNK2001: símbolo externo __imp___glewBindVertexArray sin resolver
+lineshapes.obj : error LNK2019: símbolo externo __imp___glewGenVertexArrays sin resolver al que se hace referencia en la función "public: void __cdecl Lines::load_to_gpu(void)" (?load_to_gpu@Lines@@QEAAXXZ)
+mesh.obj : error LNK2001: símbolo externo __imp___glewGenVertexArrays sin resolver
+main.obj : error LNK2019: símbolo externo glfwWindowShouldClose sin resolver al que se hace referencia en la función "public: bool __cdecl Exercise2::isLoopGo(void)" (?isLoopGo@Exercise2@@QEAA_NXZ)
+main.obj : error LNK2019: símbolo externo glfwSetWindowShouldClose sin resolver al que se hace referencia en la función "public: void __cdecl Exercise2::update(void)" (?update@Exercise2@@QEAAXXZ)
+main.obj : error LNK2019: símbolo externo glfwSetWindowFocusCallback sin resolver al que se hace referencia en la función "public: void __cdecl Exercise2::init(int,int)" (?init@Exercise2@@QEAAXHH@Z)
+main.obj : error LNK2019: símbolo externo glfwPollEvents sin resolver al que se hace referencia en la función "public: void __cdecl Exercise2::init(int,int)" (?init@Exercise2@@QEAAXHH@Z)
+main.obj : error LNK2019: símbolo externo glfwSetInputMode sin resolver al que se hace referencia en la función "public: void __cdecl Exercise2::init(int,int)" (?init@Exercise2@@QEAAXHH@Z)
+main.obj : error LNK2019: símbolo externo glfwGetKey sin resolver al que se hace referencia en la función "public: void __cdecl Exercise2::update(void)" (?update@Exercise2@@QEAAXXZ)
+main.obj : error LNK2019: símbolo externo glfwGetCursorPos sin resolver al que se hace referencia en la función "public: void __cdecl Exercise2::init(int,int)" (?init@Exercise2@@QEAAXHH@Z)
+main.obj : error LNK2019: símbolo externo glfwSwapBuffers sin resolver al que se hace referencia en la función "public: void __cdecl Exercise2::update(void)" (?update@Exercise2@@QEAAXXZ)
+main.obj : error LNK2019: símbolo externo __imp___glewUseProgram sin resolver al que se hace referencia en la función "public: void __cdecl Exercise2::update(void)" (?update@Exercise2@@QEAAXXZ)
+mesh.obj : error LNK2019: símbolo externo aiImportFile sin resolver al que se hace referencia en la función "public: bool __cdecl Meshgroup::load_from_file(char const *,int)" (?load_from_file@Meshgroup@@QEAA_NPEBDH@Z)
+mesh.obj : error LNK2019: símbolo externo aiReleaseImport sin resolver al que se hace referencia en la función "public: bool __cdecl Meshgroup::load_from_file(char const *,int)" (?load_from_file@Meshgroup@@QEAA_NPEBDH@Z)
+mesh.obj : error LNK2019: símbolo externo aiGetErrorString sin resolver al que se hace referencia en la función "public: bool __cdecl Meshgroup::load_from_file(char const *,int)" (?load_from_file@Meshgroup@@QEAA_NPEBDH@Z)
+mesh.obj : error LNK2019: símbolo externo aiGetMaterialColor sin resolver al que se hace referencia en la función "public: enum aiReturn __cdecl aiMaterial::Get<struct aiColor3D>(char const *,unsigned int,unsigned int,struct aiColor3D &)const " (??$Get@UaiColor3D@@@aiMaterial@@QEBA?AW4aiReturn@@PEBDIIAEAUaiColor3D@@@Z)
+mesh.obj : error LNK2019: símbolo externo aiGetMaterialTextureCount sin resolver al que se hace referencia en la función "public: unsigned int __cdecl aiMaterial::GetTextureCount(enum aiTextureType)const " (?GetTextureCount@aiMaterial@@QEBAIW4aiTextureType@@@Z)
+mesh.obj : error LNK2019: símbolo externo aiGetMaterialTexture sin resolver al que se hace referencia en la función "public: enum aiReturn __cdecl aiMaterial::GetTexture(enum aiTextureType,unsigned int,struct aiString *,enum aiTextureMapping *,unsigned int *,float *,enum aiTextureOp *,enum aiTextureMapMode *)const " (?GetTexture@aiMaterial@@QEBA?AW4aiReturn@@W4aiTextureType@@IPEAUaiString@@PEAW4aiTextureMapping@@PEAIPEAMPEAW4aiTextureOp@@PEAW4aiTextureMapMode@@@Z)
+mesh.obj : error LNK2019: símbolo externo __imp___glewActiveTexture sin resolver al que se hace referencia en la función "public: void __cdecl Meshgroup::Mesh::render(unsigned int)" (?render@Mesh@Meshgroup@@QEAAXI@Z)
+mesh.obj : error LNK2019: símbolo externo __imp___glewUniform1i sin resolver al que se hace referencia en la función "public: void __cdecl Meshgroup::Mesh::render(unsigned int)" (?render@Mesh@Meshgroup@@QEAAXI@Z)
+mesh.obj : error LNK2019: símbolo externo __imp___glewUniform3fv sin resolver al que se hace referencia en la función "public: void __cdecl Meshgroup::Mesh::render(unsigned int)" (?render@Mesh@Meshgroup@@QEAAXI@Z)
+..\common\lib\assimp-vc141-mt.lib : warning LNK4272: el tipo de máquina de biblioteca 'x86' está en conflicto con el tipo de máquina de destino 'x64'
+..\common\lib\glfw3.lib : warning LNK4272: el tipo de máquina de biblioteca 'x86' está en conflicto con el tipo de máquina de destino 'x64'
+..\common\lib\glew32.lib : warning LNK4272: el tipo de máquina de biblioteca 'x86' está en conflicto con el tipo de máquina de destino 'x64'
+F:\Máster\Fundamentos Matemáticos\Practicas\exercise2handout\x64\Debug\Exercise2.exe : fatal error LNK1120: 52 externos sin resolver
