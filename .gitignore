@@ -1,5 +1,11 @@
 # Visual Studio
-.vs/
+.Exercise1/exercise1handout/vs/
+.Exercise1/data/
+.Exercise1/common/
+.Exercise2/exercise2handout/vs/
+.Exercise2/data/
+.Exercise2/common/
+.
 *.VC.db
 *.VC.VC.opendb
 *.user
