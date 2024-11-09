@@ -196,11 +196,21 @@ struct Exercise2 {
 		camPitch = camPitch < -PitchLimit ? -PitchLimit : camPitch;
 		camYaw = fmodf(camYaw, 360);
 
-		// TODO: 
-		// camNode.rotation = quat_from_axis_deg(...)* ...;
+		camNode.rotation = quat_from_axis_deg(camYaw, 0, 1, 0) * quat_from_axis_deg(camPitch, 1, 0, 0);
 		
-		// TODO: use keys to modify cameraPosition here
-
+		if (glfwGetKey(window, GLFW_KEY_DOWN)) {
+			cameraPosition.y -= 3 * elapsed_seconds;
+		}
+		if (glfwGetKey(window, GLFW_KEY_UP)) {
+			cameraPosition.y += 3 * elapsed_seconds;
+		}
+		if (glfwGetKey(window, GLFW_KEY_LEFT)) {
+			cameraPosition.x -= 3 * elapsed_seconds;
+		}
+		if (glfwGetKey(window, GLFW_KEY_RIGHT)) {
+			cameraPosition.x += 3 * elapsed_seconds;
+		}
+		
 		camNode.position = cameraPosition;
 
 		mat4 cameraMatrix = translate( identity_mat4(), cameraPosition*-1.f);
@@ -215,7 +225,8 @@ struct Exercise2 {
 
 		camera.get_shader_uniforms(mesh_shader_index);
 		camera.set_shader_uniforms(mesh_shader_index, cameraMatrix );
-		// TODO: camera.set_shader_uniforms(lines_shader_index, ...);
+		mat4 viewMatrix = inverse(camNode.worldMatrix);
+		camera.set_shader_uniforms(lines_shader_index, viewMatrix);
 		
 
 		meshGroup.set_shader_uniforms(mesh_shader_index,  ambientColor);
@@ -226,11 +237,19 @@ struct Exercise2 {
 		glUseProgram(lines_shader_index);
 
 		camera.get_shader_uniforms(lines_shader_index);
-		camera.set_shader_uniforms(mesh_shader_index, cameraMatrix );
-		// TODO: camera.set_shader_uniforms(lines_shader_index, ...);
+		camera.set_shader_uniforms(mesh_shader_index, cameraMatrix ); 
+		viewMatrix = inverse(camNode.worldMatrix);
+		camera.set_shader_uniforms(lines_shader_index, viewMatrix);
 
 		grid.get_shader_uniforms(lines_shader_index);
-		//TODO: grid.set_shader_uniforms(lines_shader_index, ...);
+
+
+		float rotationSpeed = 10.0f;
+
+		sceneRoot.rotation = quat_from_axis_deg(rotationSpeed * elapsed_seconds, 0, 1, 0) * sceneRoot.rotation;
+		sceneRoot.updateHierarchy();
+
+		grid.set_shader_uniforms(lines_shader_index, viewMatrix * meshGroupNode.worldMatrix);
 
 		grid.set_shader_uniforms(lines_shader_index, gridMatrix);
 		grid.render(lines_shader_index);
