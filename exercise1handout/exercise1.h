@@ -28,26 +28,6 @@ struct Exercise1 {
 	Lines referenceFrameLines;
 	mat4 referenceFrameMatrix;
 
-	void GenerateArrows(vec3 eje1, vec3 eje2, vec3 eje3)
-	{
-		vec3 perpendicular_vector1 = (((cross(eje1, eje3) + eje1) * cos(45 * ONE_DEG_IN_RAD)) - eje1);
-		vec3 starting_point1 = (perpendicular_vector1 * (0.1 / length(perpendicular_vector1))) + eje1;
-
-		vec3 perpendicular_vector2 = (((cross(eje3, eje1) + eje1) * cos(45 * ONE_DEG_IN_RAD)) - eje1);
-		vec3 starting_point2 = (perpendicular_vector2 * (0.1 / length(perpendicular_vector2))) + eje1;
-
-		vec3 perpendicular_vector3 = (((cross(eje1, eje2) + eje1) * cos(45 * ONE_DEG_IN_RAD)) - eje1);
-		vec3 starting_point3 = (perpendicular_vector3 * (0.1 / length(perpendicular_vector3))) + eje1;
-
-		vec3 perpendicular_vector4 = (((cross(eje2, eje1) + eje1) * cos(45 * ONE_DEG_IN_RAD)) - eje1);
-		vec3 starting_point4 = (perpendicular_vector4 * (0.1 / length(perpendicular_vector4))) + eje1;
-
-		Shapes::addArrow(referenceFrameLines, starting_point1, eje1, eje1);
-		Shapes::addArrow(referenceFrameLines, starting_point2, eje1, eje1);
-		Shapes::addArrow(referenceFrameLines, starting_point3, eje1, eje1);
-		Shapes::addArrow(referenceFrameLines, starting_point4, eje1, eje1);
-	}
-
 	void init(int width, int height) {
 
 		// init
@@ -103,17 +83,9 @@ struct Exercise1 {
 		cubePosition = vec3(0, 0, 0);
 		cubeRotation = vec3(0, 0, 0);
 
-		// eje X
 		Shapes::addArrow(referenceFrameLines, vec3(0, 0, 0), vec3(1, 0, 0), vec3(1, 0, 0));
-		GenerateArrows(vec3(1,0,0), vec3(0,1,0), vec3(0,0,1));
-
-		// eje Y
 		Shapes::addArrow(referenceFrameLines, vec3(0, 0, 0), vec3(0, 1, 0), vec3(0, 1, 0));
-		GenerateArrows(vec3(0, 1, 0), vec3(1, 0, 0), vec3(0, 0, 1));
-	
-		// eje Z
 		Shapes::addArrow(referenceFrameLines, vec3(0, 0, 0), vec3(0, 0, 1), vec3(0, 0, 1));
-		GenerateArrows(vec3(0, 0, 1), vec3(1, 0, 0), vec3(0, 1, 0));
 
 		referenceFrameLines.load_to_gpu();
 		referenceFrameLines.get_shader_locations(lines_shader_index);

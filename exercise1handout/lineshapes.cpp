@@ -88,27 +88,54 @@ void Lines::render(GLuint shader_programme)
 
 void Shapes::addArrow(Lines & lines, const vec3 & from, const vec3 & to, const vec3 & color)
 {
-	// TODO: change following code to draw arrow point
-	// remember: to obtain a perpendicular to vector to-from, you can use cross(to-from, up)
-	// if you normalize and multiply result by a number #, you will get a vector with number # length
-	// add your new positions to arrow_vertices, then the corresponding arrow_colors
-	// finally draw lines with indices arrow_indices
+	const float threshold = 0.005f;
+	vec3 direction = to - from;
+
+	vec3 perpendicular;
+	if (dot(normalise(direction), vec3(0, 1, 0)) < (1-threshold))
+	{
+		perpendicular = vec3(0,1,0);
+	}
+	else
+	{
+		perpendicular = vec3(1,0,0);
+	}
+
+	float distance = length(direction);
+	vec3 lateral = normalise(cross(direction, perpendicular));
+	vec3 vertical = normalise(cross(lateral, direction));
 
 	vec3 arrow_vertices[] = {
 		from,
 		to,
+		from + direction * 0.9f + lateral * distance * 0.02f,
+		from + direction * 0.9f + vertical * distance * 0.02f,
+		from + direction * 0.9f - lateral * distance * 0.02f,
+		from + direction * 0.9f - vertical * distance * 0.02f,
 	};
-	
+
 	vec3 arrow_colors[] = {
+		color,
+		color,
+		color,
+		color,
 		color,
 		color,
 	};
 
 	unsigned int arrow_indices[] = {
-		0,1, // draw line from arrow_vertices[0] to arrow_vertices[1]
+		0,1,
+		1,2,
+		1,3,
+		1,4,
+		1,5,
+		2,3,
+		3,4,
+		4,5,
+		5,2,
 	};
 
-	lines.add(&arrow_vertices[0].v[0], &arrow_colors[0].v[0], 2, &arrow_indices[0], 2);
+	lines.add(&arrow_vertices[0].v[0], &arrow_colors[0].v[0], 6, &arrow_indices[0], 18);
 }
 
 void Shapes::addGrid(Lines& lines, const vec3& from, const vec3& to, const vec3& color, int divs) {
