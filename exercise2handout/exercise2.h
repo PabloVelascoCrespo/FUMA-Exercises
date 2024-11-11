@@ -199,10 +199,10 @@ struct Exercise2 {
 		camNode.rotation = quat_from_axis_deg(camYaw, 0, 1, 0) * quat_from_axis_deg(camPitch, 1, 0, 0);
 		
 		if (glfwGetKey(window, GLFW_KEY_DOWN)) {
-			cameraPosition.y -= 3 * elapsed_seconds;
+			cameraPosition.z += 3 * elapsed_seconds;
 		}
 		if (glfwGetKey(window, GLFW_KEY_UP)) {
-			cameraPosition.y += 3 * elapsed_seconds;
+			cameraPosition.z -= 3 * elapsed_seconds;
 		}
 		if (glfwGetKey(window, GLFW_KEY_LEFT)) {
 			cameraPosition.x -= 3 * elapsed_seconds;
