@@ -47,7 +47,24 @@ struct Exercise3 {
 	
 	static vec3 getWorldMousePosition(float mouse_x, float mouse_y, float windowsWidth, float windowsHeight, const mat4& projMat, const mat4& viewMat) {
 
-		return vec3(0, 0, 0);
+		float x = (2.0f * mouse_x) / windowsWidth - 1.0f;
+		float y = 1.0f - (2.0f * mouse_y) / windowsHeight;
+		float z = -1.0f;
+		/*
+		En este caso usamos z = -1 ya que queremos trabajar con el plano cercano (near plane), que corresponde con el punto más cercano al observador. Es decir
+		que el rayo iniciaría desde la cámara para realizar intersecciones con los elementos de la escena.
+		Si usáramos z = 1 el rayo se trazaría al revés, empezando por el plano lejano (far plane)´.
+		*/
+		float w = 1.0f;
+		
+		vec4 ray_clip = vec4(x, y, z, w);
+
+		vec4 ray_eye = inverse(projMat) * ray_clip;
+		ray_eye = vec4(ray_eye.x, ray_eye.y, ray_eye.z, w);
+
+		vec3 ray_world = vec3(inverse(viewMat) * ray_eye);
+
+		return ray_world;
 
 	}
 
@@ -62,7 +79,7 @@ struct Exercise3 {
 
 	// as in http://viclw17.github.io/2018/07/16/raytracing-ray-sphere-intersection/
 	// also "Ray Sphere Intersection 1 Analytical.pdf"
-	static bool raySphereIntersection(const Ray& ray, vec3 C, float r, float* intersection_distance) {
+	static bool raySphereIntersectionAnalytical(const Ray& ray, vec3 C, float r, float* intersection_distance) {
 
 		const vec3& A = ray.origin;
 		const vec3& B = ray.direction;
@@ -107,9 +124,35 @@ struct Exercise3 {
 
 	// as in https://www.scratchapixel.com/lessons/3d-basic-rendering/minimal-ray-tracer-rendering-simple-shapes/ray-sphere-intersection
 	// also "Ray Sphere Intersection 2 Geometrical.pdf"
-	//static bool raySphereIntersection(const Ray& ray, vec3 C, float r, float* intersection_distance) {
+	// Encuentro mucho más natural esta forma de calcular la intersección que la forma analítica
+	static bool raySphereIntersectionGeometrical(const Ray& ray, vec3 C, float r, float* intersection_distance) {
 
-	//}
+		const vec3& A = ray.origin;
+		const vec3& B = ray.direction;
+
+		vec3 AC = C - A;
+		float t_closest = dot(AC,B);
+		vec3 P_closest = A + vec3(t_closest * B.x, t_closest * B.y, t_closest * B.z);
+		float dist_to_center_sq = dot(P_closest - C, P_closest-C);
+
+		if (dist_to_center_sq > (r * r)) {
+			return false;
+		}
+
+		float offset = sqrtf(r * r - dist_to_center_sq);
+
+		float t_hit = t_closest - offset;
+
+		if (t_hit < 0.0f) {
+			t_hit = t_closest + offset;
+			if (t_hit < 0.0f) {
+				return false;
+			}
+		}
+
+		*intersection_distance = t_hit;
+		return true;
+	}
 
 	static void onKeyPressed(GLFWwindow* window, int key, int scancode, int action, int mods){
 
@@ -139,6 +182,7 @@ struct Exercise3 {
 
 			const vec3 camPos = exercise.camNode.worldMatrix.getColumn(3);
 			Ray ray;
+
 			ray.origin = camPos;
 			ray.direction = normalise(mouseWorldPos - camPos);
 
@@ -150,7 +194,7 @@ struct Exercise3 {
 
 				const vec3 spherePos = exercise.sphereNodes[i].worldMatrix.getColumn(3);
 			
-				if (raySphereIntersection(ray, spherePos, 1, &t_dist)) {
+				if (raySphereIntersectionGeometrical(ray, spherePos, 1, &t_dist)) {
 					if (-1 == closest_sphere_clicked || t_dist < closest_intersection) {
 						closest_sphere_clicked = i;
 						closest_intersection = t_dist;
